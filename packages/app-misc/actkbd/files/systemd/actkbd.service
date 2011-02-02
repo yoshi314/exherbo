@@ -1,0 +1,9 @@
+# Distributed under the terms of the GNU General Public License v2
+
+[Unit]
+Description=Dynamic DNS updater client
+
+[Service]
+Type=forking
+User=root
+ExecStart=

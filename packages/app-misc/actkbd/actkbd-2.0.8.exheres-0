@@ -1,0 +1,35 @@
+SUMMARY="Keyboard shortcut daemon"
+
+DESCRIPTION="Actkbd is a keyboard event daemon. It can be configured to run specific commands 
+at certain keypress. It can be used e.g. to control MPD with multimedia keys with mpc , even without X"
+
+HOMEPAGE="http://users.softlab.ntua.gr/~thkala/projects/actkbd/"
+
+DOWNLOADS="http://users.softlab.ntua.gr/~thkala/projects/actkbd/files/actkbd-0.2.8.tar.bz2"
+
+LICENCES="GPL-2"
+SLOT="0"
+PLATFORMS="~amd64 ~x86"
+
+MYOPTIONS="systemd"
+
+
+DEFAULT_SRC_PREPARE_PATCHES=)
+	"${FILES}"/${PNV}-amd64.patch
+)
+
+src_compile() {
+	emake CFLAGS="$CPPFLAGS $CFLAGS" 
+}
+
+src_install() {
+ 	dobin actkbd || die "dobin failed"
+ 	dodoc AUTHORS ChangeLog FAQ README TODO
+ 	docinto samples
+ 	dodoc samples/{actkbd.conf,udev.rules}
+	if option systemd ; then
+		install_systemd_files
+	fi
+} 
+
+
