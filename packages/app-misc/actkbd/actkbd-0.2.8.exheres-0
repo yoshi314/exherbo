@@ -30,6 +30,9 @@ src_install() {
 	if option systemd ; then
 		install_systemd_files
 	fi
+
+	insinto /etc
+	doins "${FILES}"/actkbd.conf
 } 
 
 
