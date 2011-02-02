@@ -1,9 +1,9 @@
 # Distributed under the terms of the GNU General Public License v2
 
 [Unit]
-Description=Dynamic DNS updater client
+Description=Keyboard Shortcut Daemon
 
 [Service]
 Type=forking
 User=root
-ExecStart=/usr/bin/actkbd -q -D
+ExecStart=/usr/bin/actkbd -q -D  -d /dev/input/by-path/platform-i8042-serio-0-event-kbd
