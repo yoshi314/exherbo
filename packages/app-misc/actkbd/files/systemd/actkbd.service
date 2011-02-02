@@ -7,3 +7,6 @@ Description=Keyboard Shortcut Daemon
 Type=forking
 User=root
 ExecStart=/usr/bin/actkbd -q -D  -d /dev/input/by-path/platform-i8042-serio-0-event-kbd
+
+[Install]
+WantedBy=getty.target
