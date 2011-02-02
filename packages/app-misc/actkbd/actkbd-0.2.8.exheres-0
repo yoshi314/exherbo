@@ -1,4 +1,4 @@
-require [ systemd-files=[ actkbd.service ] ]
+require systemd-service [ systemd-files=[ actkbd.service ] ]
 
 SUMMARY="Keyboard shortcut daemon"
 
