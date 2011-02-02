@@ -1,3 +1,5 @@
+require [ systemd-files=[ actkbd.service ] ]
+
 SUMMARY="Keyboard shortcut daemon"
 
 DESCRIPTION="Actkbd is a keyboard event daemon. It can be configured to run specific commands 
