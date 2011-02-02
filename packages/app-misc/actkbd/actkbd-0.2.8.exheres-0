@@ -27,9 +27,7 @@ src_install() {
  	dodoc AUTHORS ChangeLog FAQ README TODO
  	docinto samples
  	dodoc samples/{actkbd.conf,udev.rules}
-	if option systemd ; then
-		install_systemd_files
-	fi
+	install_systemd_files
 
 	insinto /etc
 	doins "${FILES}"/actkbd.conf
